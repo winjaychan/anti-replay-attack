@@ -8,7 +8,7 @@
         <module>example-userid-attack</module>
         <module>starter</module>
     </modules>
-    <groupId>org.winjay</groupId>
+    <groupId>com.github.winjaychan</groupId>
     <artifactId>anti-replay-attack</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>anti-replay-attack</name>
