@@ -1,0 +1,19 @@
+
+config:
+  rate-limit:
+    prefix: winjay
+    type: redis
+    rate-limit-interfaces:
+      - {"method": "put", "uri": "/relayattack/{tenantid}/role/{roleid}", "limit": 6, "limitPeriod": 60}
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        min-idle: 2
+  cache:
+    redis:
+      key-prefix: false

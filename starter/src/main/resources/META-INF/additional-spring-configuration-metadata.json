@@ -1,0 +1,22 @@
+{
+  "properties": [
+    {
+      "name": "config.rate-limit.prefix",
+      "type": "java.lang.String",
+      "description": "key 前缀.",
+      "sourceType": "org.winjay.component.antireplayattack.limit.config.RateLimitConfig"
+
+    }
+  ],
+  "hints": [
+    {
+      "name": "config.rate-limit.type",
+      "type": "java.lang.String",
+      "values": [{
+        "value": "local"
+      },{
+        "value": "redis"
+      }]
+    }
+  ]
+}

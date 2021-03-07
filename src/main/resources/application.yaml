@@ -1,0 +1,7 @@
+
+config:
+  rate-limit:
+    prefix: winjay
+    type: local
+    rate-limit-interfaces:
+      - {"method": "put", "uri": "/relayattack/{tenantid}/role/{roleid}", "limit": 10, "limitPeriod": 60}
