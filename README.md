@@ -1,7 +1,7 @@
 # anti-replay-attack
 
 #### 介绍
-配置化处理统一重放攻击，可支持restful风格中的PathVariable变量
+配置化统一处理重放攻击，可支持restful风格中的PathVariable变量
 
 
 
@@ -13,7 +13,7 @@
    <dependency>
        <groupId>org.winjay</groupId>
        <artifactId>anti-replay-attack-spring-boot-starter</artifactId>
-       <version>0.0.1-SNAPSHOT</version>
+       <version>0.0.2-SNAPSHOT</version>
     </dependency>
    ```
 
