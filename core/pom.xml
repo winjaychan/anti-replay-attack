@@ -5,12 +5,13 @@
     <parent>
         <artifactId>anti-replay-attack</artifactId>
         <groupId>com.github.winjaychan</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
 
     <artifactId>anti-replay-attack-core</artifactId>
+<!--    <version>0.0.1</version>-->
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
