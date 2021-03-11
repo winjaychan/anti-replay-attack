@@ -75,5 +75,10 @@
     }
     ```
 
-    
+3. 配置中心配置（properties或yaml）
 
+   ```properties
+   config.rate-limit.type=custome-type
+   ```
+
+   
