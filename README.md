@@ -7,6 +7,8 @@
 
 #### 使用说明
 
+##### 常规使用
+
 1. 在pom.xml增加starter依赖
 
    ```xml
@@ -44,3 +46,34 @@
    参数：可传入业务 属性值，如按用户对拉口进行限制请求次数，可传入当前用户标识
 
    返回值：true：未达到限制上限制，false: 达到限制上限值
+
+##### 扩展使用
+
+1. 实现自定义处理器
+
+   ```java
+   @Slf4j
+   public class CustomerRateLimiter implements IRateLimiter {
+       @Override
+       public boolean apply(RateLimitRequestEntity rateLimitRequestEntity, RateLimitInterfaceDef rateLimitInterfaceDef) {
+           // 处理逻辑
+       }
+   }
+   ```
+   
+ 2. 注册Bean
+
+    ```java
+    @Configuration
+    @EnableConfigurationProperties({RateLimitConfig.class})
+    public class RateLimitAutoConfigure {
+        @Bean
+        @ConditionalOnProperty(value = "config.rate-limit.type", havingValue = "custome-type")
+        public CustomerRateLimiter customerRateLimiter(){
+            return new CustomerRateLimiter();
+        }
+    }
+    ```
+
+    
+
