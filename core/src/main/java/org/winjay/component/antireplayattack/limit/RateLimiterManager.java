@@ -2,11 +2,12 @@ package org.winjay.component.antireplayattack.limit;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.HandlerMapping;
 import org.winjay.component.antireplayattack.limit.config.RateLimitConfig;
+import org.winjay.component.antireplayattack.limit.core.LimitPoint;
+import org.winjay.component.antireplayattack.limit.core.LimitProcessResult;
 import org.winjay.component.antireplayattack.limit.model.RateLimitInterfaceDef;
 import org.winjay.component.antireplayattack.limit.model.RateLimitRequestEntity;
 
@@ -43,9 +44,22 @@ public class RateLimiterManager {
 
     /**
      * 应用限流次数规则
+     * @param limitPoint
+     * @return
+     */
+    public LimitProcessResult applyRateLimit(LimitPoint limitPoint){
+        DefaultLimitProcessResultImpl result = new DefaultLimitProcessResultImpl();
+        boolean limitResult = applyRateLimit(limitPoint.getBusinessPoint().toArray(new String[limitPoint.getBusinessPoint().size()]));
+        result.setProcessResult(limitResult);
+        return result;
+    }
+
+    /**
+     * 应用限流次数规则
      * @param bizCacheKey 业务的Key，可以使用多个组成，按业务需要进行组装
      * @return
      */
+    @Deprecated
     public boolean applyRateLimit(String... bizCacheKey){
         RateLimitRequestEntity rateLimitRequestEntity = fromHttpRequest();
         RateLimitInterfaceDef rateLimitInterfaceDef = findRateLimitInterfaceDef(rateLimitRequestEntity);
