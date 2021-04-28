@@ -35,7 +35,7 @@
     </modules>
     <groupId>com.github.winjaychan</groupId>
     <artifactId>anti-replay-attack</artifactId>
-    <version>0.0.2</version>
+    <version>0.3.0</version>
     <name>anti-replay-attack</name>
     <description>Demo project for Spring Boot</description>
     <properties>
