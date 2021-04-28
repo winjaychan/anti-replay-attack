@@ -15,7 +15,7 @@
    <dependency>
        <groupId>org.winjay</groupId>
        <artifactId>anti-replay-attack-spring-boot-starter</artifactId>
-       <version>0.0.2</version>
+       <version>0.3.0</version>
     </dependency>
    ```
 
